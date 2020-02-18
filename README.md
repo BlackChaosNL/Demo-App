@@ -26,9 +26,10 @@ The build is minified and the filenames include the hashes. Your app is ready to
 - [ ] The dashboard should render a Paginated List.
 
 ### Software used
-\# | Software | Reason
---- | --- | ---
-1. | React | Requirement.
-2. | React Router | To route between different components, a react router is used.
-3. | TypeScript | To make use of the strong types, I made use of TypeScript
-4. | Bootstrap | To structure the front-end, bootstrap is used.
+\# | Software | Reason |
+--- | --- | --- |
+\1. | React | Requirement. |
+\2. | React Router | To route between different components, a react router is used. |
+\3. | TypeScript | To make use of the strong types, I made use of TypeScript |
+\4. | Bootstrap | To structure the front-end, bootstrap is used. |
+\5. | Axios | To communicate with external API's, I added Axios. |
