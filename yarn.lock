@@ -1259,6 +1259,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/fontawesome-common-types@npm:^0.2.27":
+  version: 0.2.27
+  resolution: "@fortawesome/fontawesome-common-types@npm:0.2.27"
+  checksum: 2eb1f4adbe31a6533b3d3fdd20e37fd7c9e61cf29d144fcb3d225a5d16b57c16fa2a72dd6862382ea7b184aca85fd65b66781de1570a4b911eb4e9b39a74f9de
+  languageName: node
+  linkType: hard
+
+"@fortawesome/fontawesome-svg-core@npm:^1.2.27":
+  version: 1.2.27
+  resolution: "@fortawesome/fontawesome-svg-core@npm:1.2.27"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": ^0.2.27
+  checksum: 000027a6d1a33a152e4799bd0c3c1507205697f86ddc0961f69f83c8561bcf93327353980efc8794f1dd7e7a1a50a36f710198d9f7e03855d9832fd5df6958f9
+  languageName: node
+  linkType: hard
+
+"@fortawesome/free-solid-svg-icons@npm:^5.12.1":
+  version: 5.12.1
+  resolution: "@fortawesome/free-solid-svg-icons@npm:5.12.1"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": ^0.2.27
+  checksum: f966c13f826dfe57b2e2a212d5968ce7d4f9670ffb26d675259a2f0d19dfa777d269e6e4506e16d00da34943ae8526eb1fb2b889467f309ca3dbf371a57aec94
+  languageName: node
+  linkType: hard
+
+"@fortawesome/react-fontawesome@npm:^0.1.8":
+  version: 0.1.8
+  resolution: "@fortawesome/react-fontawesome@npm:0.1.8"
+  dependencies:
+    prop-types: ^15.5.10
+  peerDependencies:
+    "@fortawesome/fontawesome-svg-core": ^1.2.20
+    react: 16.x
+  checksum: c13777b29061dcca6d39ee2f30d820e1221e4293ce87d336197bb6e0c19adbd4bbb2963be03c71f8e093a36e813b8acf2079849e62a7450f1d871a8678ecd5d6
+  languageName: node
+  linkType: hard
+
 "@hapi/address@npm:2.x.x":
   version: 2.1.4
   resolution: "@hapi/address@npm:2.1.4"
@@ -1769,7 +1806,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/history@npm:*":
+"@types/history@npm:*, @types/history@npm:^4.7.5":
   version: 4.7.5
   resolution: "@types/history@npm:4.7.5"
   checksum: 16a19c2b1aee6d0ff055940e4ca29db26aa8b0c8ff69161e70dec2151abb4fe3d5be846577c696a5d870a281e362669707ff43323d435a3d84811e6a238348f1
@@ -1873,6 +1910,15 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: 5748cb428399d176af2ce7a2423352e2b2e2fb511bb264234d86dd4bb1de24fa609da40f97cdb632a68cc07eb9a99d56cfcb84aff7a160e91ec4d717d92cd266
+  languageName: node
+  linkType: hard
+
+"@types/react-fontawesome@npm:^1.6.4":
+  version: 1.6.4
+  resolution: "@types/react-fontawesome@npm:1.6.4"
+  dependencies:
+    "@types/react": "*"
+  checksum: ccf31aafa5c595ae9736ce5a9942c141a75c9ad11f8977c62ed4b06d7e1961ee8f226257fe867bd6df72ee62eed5bf8552250ada06d2fe38f8988a4a775fc0f6
   languageName: node
   linkType: hard
 
@@ -2814,6 +2860,15 @@ __metadata:
   version: 1.9.1
   resolution: "aws4@npm:1.9.1"
   checksum: dd43d697245d006ca50ae95c9d737f10efe687e7d422c48db3a382fa19aac546a0a5ca0b6ff6cf7f269631d34a03ddf9c650b0dcdca6dfa73c3751eff8276214
+  languageName: node
+  linkType: hard
+
+"axios@npm:^0.19.2":
+  version: 0.19.2
+  resolution: "axios@npm:0.19.2"
+  dependencies:
+    follow-redirects: 1.5.10
+  checksum: 28c860c203dc1e545a899eea83c95c51bb7de4a21ffef4781de11331207371c9cb1a680bcc7122dda936cd5e51f83f7b0a0eccc50801229b5e4914c8f2dd8907
   languageName: node
   linkType: hard
 
@@ -4530,6 +4585,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"debug@npm:=3.1.0":
+  version: 3.1.0
+  resolution: "debug@npm:3.1.0"
+  dependencies:
+    ms: 2.0.0
+  checksum: 31ac62be845b3e2bc49ea566665749e58030123e6d0b2960cb7c730037dc825f46d012e3f63f43fc9d60de3c52edbce705d22cb7e571e2822c81bc5d5ae09da9
+  languageName: node
+  linkType: hard
+
 "debug@npm:^3.0.0, debug@npm:^3.1.1, debug@npm:^3.2.5, debug@npm:^3.2.6":
   version: 3.2.6
   resolution: "debug@npm:3.2.6"
@@ -4670,9 +4734,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "demo-app@workspace:."
   dependencies:
+    "@fortawesome/fontawesome-svg-core": ^1.2.27
+    "@fortawesome/free-solid-svg-icons": ^5.12.1
+    "@fortawesome/react-fontawesome": ^0.1.8
     "@testing-library/jest-dom": ^4.2.4
     "@testing-library/react": ^9.4.0
     "@testing-library/user-event": ^7.1.2
+    "@types/history": ^4.7.5
     "@types/istanbul-lib-coverage": ^2.0.1
     "@types/jest": ^24.9.1
     "@types/mocha": ^7.0.1
@@ -4680,23 +4748,26 @@ __metadata:
     "@types/prop-types": ^15.7.3
     "@types/react": ^16.9.19
     "@types/react-dom": ^16.9.5
+    "@types/react-fontawesome": ^1.6.4
     "@types/react-router-dom": ^5.1.3
     "@typescript-eslint/eslint-plugin": ^2.19.2
     "@typescript-eslint/parser": ^2.19.2
+    axios: ^0.19.2
     bootstrap: ^4.4.1
     eslint: ^6.8.0
     eslint-config-prettier: ^6.10.0
     eslint-plugin-prettier: ^3.1.2
     eslint-plugin-react: ^7.18.3
+    history: ^4.10.1
     jquery: ^3.4.1
     popper.js: ^1.16.1
     prettier: ^1.19.1
     react: ^16.12.0
     react-bootstrap: ^1.0.0-beta.16
     react-dom: ^16.12.0
+    react-fontawesome: ^1.7.1
     react-router-dom: ^5.1.2
     react-scripts: 3.3.1
-    store: ^2.0.12
     typescript: ~3.7.2
   languageName: unknown
   linkType: soft
@@ -5994,6 +6065,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"follow-redirects@npm:1.5.10":
+  version: 1.5.10
+  resolution: "follow-redirects@npm:1.5.10"
+  dependencies:
+    debug: =3.1.0
+  checksum: 23c6333d60b73b899f9495d67b3dd5b2b99c26cd76278d03def3c39c715f0eed53cbfe1eb1e342a7281041961fe2c69c03daa97279df66a552ab6fb3d22059fc
+  languageName: node
+  linkType: hard
+
 "follow-redirects@npm:^1.0.0":
   version: 1.10.0
   resolution: "follow-redirects@npm:1.10.0"
@@ -6582,7 +6662,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"history@npm:^4.9.0":
+"history@npm:^4.10.1, history@npm:^4.9.0":
   version: 4.10.1
   resolution: "history@npm:4.10.1"
   dependencies:
@@ -11118,7 +11198,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
+"prop-types@npm:^15.5.10, prop-types@npm:^15.5.6, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -11422,6 +11502,17 @@ fsevents@^1.2.7:
   version: 6.0.5
   resolution: "react-error-overlay@npm:6.0.5"
   checksum: c8f9f39bbe5448db2b57d2936702417f273f9588eb282ca171d56068259c9beef79154ea28ad0a1fe3e3dd596bcf8d2d3c9eea843e58498801c83401cabb388d
+  languageName: node
+  linkType: hard
+
+"react-fontawesome@npm:^1.7.1":
+  version: 1.7.1
+  resolution: "react-fontawesome@npm:1.7.1"
+  dependencies:
+    prop-types: ^15.5.6
+  peerDependencies:
+    react: ">=0.12.0"
+  checksum: 9cedcd84255cb13196e7db70d49e928dc26982d059ae72396171f132933a38f50c9454b93f1f127edfd4a7fc7a4d01611f82dd73e86110724884ae9e9c064596
   languageName: node
   linkType: hard
 
@@ -12830,13 +12921,6 @@ resolve@1.1.7:
   version: 1.1.1
   resolution: "stealthy-require@npm:1.1.1"
   checksum: ac27495d1a1d6018109606146a83203471ef1ebadac2c4cd3ea6fd5468596f0a0ba2d5cfcb2d5ffb3a77f8e80379a6ecfd496fbf5a224e9ab88fd675eecf4941
-  languageName: node
-  linkType: hard
-
-"store@npm:^2.0.12":
-  version: 2.0.12
-  resolution: "store@npm:2.0.12"
-  checksum: 101053f2842b6a186d8556ef5a176feb4494cfe4a182b454c5c7150362c67344abafd8e012c7769ea51745cdff38447c3e0c9d5ef36740bcc65e174adb605309
   languageName: node
   linkType: hard
 
