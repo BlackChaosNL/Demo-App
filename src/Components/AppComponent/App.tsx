@@ -6,7 +6,6 @@ import Login from '../LoginComponent/Login';
 import Dashboard from '../DashboardComponent/Dashboard';
 
 export default class App extends React.Component {
-
 	render() {
 	  return (
 	    <Switch>

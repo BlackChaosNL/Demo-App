@@ -17,3 +17,8 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+
+.DashboardComponent {
+	background-color: white;
+	border-radius: 7px;
+}

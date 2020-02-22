@@ -4,10 +4,9 @@ import { Card, Button, FormControl } from 'react-bootstrap';
 export default class LoginView extends React.Component<{
 	persistApiLink: any,
 	persistAccessToken: any,
-	verifyLogin: any,
-	getApiLinkFromDTO: any,
-	getApiTokenFromDTO: any
+	verifyLogin: any
 }> {
+    props: any;
 	render () {
 		return (
 			<div className="LoginComponent">
