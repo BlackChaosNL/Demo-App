@@ -25,8 +25,6 @@ export default class Login extends React.Component<{
 	}
 
 	verifyLogin() {
-		console.log("API Link: " + this.state.dto.getApiLink());
-		console.log("API Token: " + this.state.dto.getApiToken());
 		localStorage.setItem("lastLoggedIn", new Date().toUTCString());
 		// eslint-disable-next-line
 		this.props.history.push({

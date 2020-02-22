@@ -18,7 +18,7 @@ export default class LoginView extends React.Component<{
 					  <FormControl aria-label="Default"
 						aria-describedby="inputGroup-sizing-default"
 						type="text"
-						placeholder="API Link"
+						placeholder="API Link (http://api.concept.com/)"
 						defaultValue={localStorage.getItem("APILink") || ""}
 						onChange={(e: any) => this.props.persistApiLink(e)}
 					  />

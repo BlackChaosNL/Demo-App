@@ -18,14 +18,16 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes. Your app is ready to be deployed!
 
-### Requirement list
+## Requirement list
+
 - [X] Create React web app
 - [X] It should have fields for giving start date, end date and access token as arguments to the app.
 - [ ] App should make HTTP GET request to the API to fetch chat counts between those two given dates.
 - [ ] The dashboard should render three values from the API.
-- [ ] The dashboard should render a Paginated List.
+- [X] The dashboard should render a Paginated List.
 
-### Software used
+## Software used
+
 \# | Software | Reason |
 --- | --- | --- |
 1 | React | Requirement. |
@@ -34,3 +36,4 @@ The build is minified and the filenames include the hashes. Your app is ready to
 4 | Bootstrap | To structure the front-end, bootstrap is used. |
 5 | Axios | To communicate with external API's, I added Axios. |
 6 | FontAwesome | To communicate actions to the user, I have added some relatable icons for actions. |
+7 | react-bootstrap-table2-* | To get a paginated table, React Bootstrap Table is used. |

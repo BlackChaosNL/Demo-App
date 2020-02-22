@@ -22,3 +22,8 @@ body {
 	background-color: white;
 	border-radius: 7px;
 }
+
+.fullSize {
+	width: 96%;
+	margin: 0 auto;
+}

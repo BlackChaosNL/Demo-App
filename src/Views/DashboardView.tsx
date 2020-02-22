@@ -4,7 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSync } from '@fortawesome/free-solid-svg-icons';
 import Table from "./TableView";
 
-export default class DashboardView extends React.Component {
+export default class DashboardView extends React.Component<{
+	checkFirstDate: any,
+	checkSecondDate: any,
+	getItemsFromApi: any
+}> {
 	render () {
 		return (
 			<div className="DashboardComponent">
@@ -26,7 +30,8 @@ export default class DashboardView extends React.Component {
 								  placeholder="2017-05-01"
 								  aria-label="2017-05-01"
 								  aria-describedby="basic-addon1"
-								  defaultValue={localStorage.getItem("FirstDate") || ""}
+								  defaultValue={localStorage.getItem("FirstDate") || "2017-05-01"}
+								  onChange={(e: any) => this.props.checkFirstDate(e)}
 								/>
 							</InputGroup>
 						</Col>
@@ -40,13 +45,14 @@ export default class DashboardView extends React.Component {
 								  placeholder="2017-06-15"
 								  aria-label="2017-06-15"
 								  aria-describedby="basic-addon1"
-								  defaultValue={localStorage.getItem("SecondDate") || ""}
+								  defaultValue={localStorage.getItem("SecondDate") || "2017-06-15"}
+								  onChange={(e: any) => this.props.checkSecondDate(e)}
 								/>
 							</InputGroup>
 						</Col>
 
 						<Col>
-							<Button variant="primary">
+							<Button variant="primary" onClick={this.props.getItemsFromApi}>
 							  <FontAwesomeIcon icon={faSync} />
 							</Button>
 						</Col>
@@ -80,14 +86,14 @@ export default class DashboardView extends React.Component {
 					<Row>
 						<Table
 						  columns={[{
-							  dataField: 'id',
-							  text: 'Product ID'
+							  dataField: 'conversation_count',
+							  text: 'Conversation Count'
 							}, {
-							  dataField: 'name',
-							  text: 'Product Name'
+							  dataField: 'missed_chat_count',
+							  text: 'Missed Chat Count'
 							}, {
-							  dataField: 'price',
-							  text: 'Product Price'
+							  dataField: 'visitors_with_conversation_count',
+							  text: 'Visitors With Conversation Count'
 							}]}
 						  data={[]} />
 					</Row>
