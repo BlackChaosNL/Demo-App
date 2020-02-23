@@ -1,6 +1,4 @@
-import IDTO from './IDTO';
-
-export default class API_DTO implements IDTO {
+export default class API_DTO {
     API_Link: string;
     API_Token: string;
     First_Date: string;
