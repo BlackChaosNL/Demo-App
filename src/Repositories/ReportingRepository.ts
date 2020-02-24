@@ -8,8 +8,9 @@ export default class ReportingRepository {
         this.instance = axios.create({
             baseURL: t.getApiLink(),
             headers: {
-                'Authorization': 'Bearer ' + t.getApiToken(),
-                'Access-Control-Allow-Origin': '*'
+                'Authorization': 'Token ' + t.getApiToken(),
+                'Access-Control-Allow-Origin': '*',
+                'Accept': 'application/json'
             }
         });
     }
@@ -18,15 +19,12 @@ export default class ReportingRepository {
         throw new Error("Method not implemented.");
     }
 
-    Read(_t: API_DTO) {
+    async Read(_t: API_DTO) {
         if (this.instance === undefined)
             throw new Error("[ReportingRepository]: Please initiate the constructor first before calling a subfunction.");
-        this.instance.get("api/reporting/v1/rooms/84e0fefa-5675-11e7-a349-00163efdd8db/chat-stats/daily/", {
+        return (await this.instance.get("api/reporting/v1/rooms/84e0fefa-5675-11e7-a349-00163efdd8db/chat-stats/daily/", {
             params: { "start_date": _t.getFirstDate(), "end_date": _t.getFirstDate() }
-        })
-            .then((res) => {
-                return res.data;
-            });
+        })).data;
     }
 
     Update(_t: any) {

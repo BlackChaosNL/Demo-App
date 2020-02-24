@@ -12,35 +12,38 @@ export default class Dashboard extends React.Component<{
 }> {
 	constructor(props: any) {
 		super(props);
-		if (this.props.location.state.dto !== undefined) {
+		try {
 			// If the state exists being routed from /, fill in Dashboard State.
-			const DTO = new API_DTO();
-			DTO.setApiLink(this.props.location.state.dto.API_Link);
-			DTO.setApiToken(this.props.location.state.dto.API_Token);
-			DTO.setFirstDate(localStorage.getItem("First_Date") || "");
-			DTO.setSecondDate(localStorage.getItem("Second_Date") || "");
-			this.state = {
-				 dto: DTO,
-				 ReportingRepository: new ReportingRepository(DTO)
+			if (this.props.location.state.dto) {
+				const DTO = new API_DTO();
+				DTO.setApiLink(this.props.location.state.dto.API_Link);
+				DTO.setApiToken(this.props.location.state.dto.API_Token);
+				DTO.setFirstDate(localStorage.getItem("First_Date") || "");
+				DTO.setSecondDate(localStorage.getItem("Second_Date") || "");
+				this.state = {
+					 dto: DTO,
+					 ReportingRepository: new ReportingRepository(DTO)
+				}
 			}
-		} else if (localStorage.getItem("APILink") !== null &&
-					localStorage.getItem("AccessToken") !== null) {
+		} catch (err) {
 			// Check if localStorage has valid items, if this is the case, we can use those.
 			// Resolve issue with cold navigation to /dashboard.
-			const DTO = new API_DTO();
-			DTO.setApiLink(localStorage.getItem("APILink"));
-			DTO.setApiToken(localStorage.getItem("AccessToken"));
-			DTO.setFirstDate(localStorage.getItem("First_Date") || "");
-			DTO.setSecondDate(localStorage.getItem("Second_Date") || "");
-			this.state = {
-				 dto: DTO,
-				 ReportingRepository: new ReportingRepository(DTO)
-			}
-		} else {
-			// Route back to / if neither is the case.
-			this.props.history.push('/');
+			if (localStorage.getItem("APILink") !== null &&
+   					localStorage.getItem("AccessToken") !== null) {
+	   			const DTO = new API_DTO();
+	   			DTO.setApiLink(localStorage.getItem("APILink"));
+	   			DTO.setApiToken(localStorage.getItem("AccessToken"));
+	   			DTO.setFirstDate(localStorage.getItem("First_Date") || "");
+	   			DTO.setSecondDate(localStorage.getItem("Second_Date") || "");
+	   			this.state = {
+	   				 dto: DTO,
+	   				 ReportingRepository: new ReportingRepository(DTO)
+	   			}
+	   		} else {
+	   			// Route back to / if neither is the case.
+	   			this.props.history.push('/');
+	   		}
 		}
-
 		this.checkFirstDate = this.checkFirstDate.bind(this);
 		this.checkSecondDate = this.checkSecondDate.bind(this);
 		this.getItemsFromApi = this.getItemsFromApi.bind(this);
