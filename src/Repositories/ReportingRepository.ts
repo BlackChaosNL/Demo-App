@@ -23,7 +23,10 @@ export default class ReportingRepository {
         if (this.instance === undefined)
             throw new Error("[ReportingRepository]: Please initiate the constructor first before calling a subfunction.");
         return (await this.instance.get("api/reporting/v1/rooms/84e0fefa-5675-11e7-a349-00163efdd8db/chat-stats/daily/", {
-            params: { "start_date": _t.getFirstDate(), "end_date": _t.getSecondDate() }
+            params: {
+                "start_date": _t.getFirstDate(),
+                "end_date": _t.getSecondDate()
+            }
         })).data;
     }
 

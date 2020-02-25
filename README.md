@@ -22,7 +22,7 @@ The build is minified and the filenames include the hashes. Your app is ready to
 
 - [X] Create React web app
 - [X] It should have fields for giving start date, end date and access token as arguments to the app.
-- [ ] App should make HTTP GET request to the API to fetch chat counts between those two given dates.
+- [X] App should make HTTP GET request to the API to fetch chat counts between those two given dates.
 - [ ] The dashboard should render three values from the API.
 - [X] The dashboard should render a Paginated List.
 
@@ -37,3 +37,6 @@ The build is minified and the filenames include the hashes. Your app is ready to
 5 | Axios | To communicate with external API's, I added Axios. |
 6 | FontAwesome | To communicate actions to the user, I have added some relatable icons for actions. |
 7 | react-bootstrap-table2-* | To get a paginated table, React Bootstrap Table is used. |
+
+**NOTE**: The background used for this software is owned by www.univ-cotedazur.fr.
+I take no right or ownership to this background, as this piece of software is for personal use only.

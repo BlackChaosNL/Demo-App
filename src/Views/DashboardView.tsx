@@ -7,7 +7,8 @@ import Table from "./TableView";
 export default class DashboardView extends React.Component<{
 	checkFirstDate: any,
 	checkSecondDate: any,
-	getItemsFromApi: any
+	getItemsFromApi: any,
+	getResponseDTO: any
 }> {
 	render () {
 		return (
@@ -60,25 +61,25 @@ export default class DashboardView extends React.Component<{
 					<Row>
 						<Col>
 							<Card>
-								<Card.Header as="h5">Total Conversation Count</Card.Header>
+								<Card.Header as="h6">Total Conversation Count</Card.Header>
 								<Card.Body>
-									<Card.Text></Card.Text>
+									<Card.Text>{ this.props.getResponseDTO().total_conversation_count }</Card.Text>
 								</Card.Body>
 							</Card>
 						</Col>
 						<Col>
 							<Card>
-								<Card.Header as="h5">Total User Message Count</Card.Header>
+								<Card.Header as="h6">Total User Message Count</Card.Header>
 								<Card.Body>
-									<Card.Text></Card.Text>
+									<Card.Text>{ this.props.getResponseDTO().total_user_message_count }</Card.Text>
 								</Card.Body>
 							</Card>
 						</Col>
 						<Col>
 							<Card>
-								<Card.Header as="h5">Total Visitor Message Count</Card.Header>
+								<Card.Header as="h6">Total Visitor Message Count</Card.Header>
 								<Card.Body>
-									<Card.Text></Card.Text>
+									<Card.Text>{ this.props.getResponseDTO().total_visitor_message_count }</Card.Text>
 								</Card.Body>
 							</Card>
 						</Col>
@@ -86,6 +87,10 @@ export default class DashboardView extends React.Component<{
 					<Row>
 						<Table
 						  columns={[{
+							  dataField: 'date',
+							  text: 'Date',
+							  sort: true
+						  	}, {
 							  dataField: 'conversation_count',
 							  text: 'Conversation Count'
 							}, {
@@ -95,12 +100,13 @@ export default class DashboardView extends React.Component<{
 							  dataField: 'visitors_with_conversation_count',
 							  text: 'Visitors With Conversation Count'
 							}]}
-						  data={[]} />
+						  data={ this.props.getResponseDTO().by_date } />
 					</Row>
 					<Row>
 						<Col>
 							<br />
-							<hr /><h6>Made with ❤ by Jeroen Vijgen </h6>
+							<hr />
+							<h6>Made with ❤ by Jeroen Vijgen </h6>
 						</Col>
 					</Row>
 				</Container>
