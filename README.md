@@ -70,9 +70,9 @@ To deploy this app on a Docker enabled system, you can follow the following step
 1. Make sure docker is enabled on your system. To install Docker on your machine, you can use the following guides: [Linux Machine (Ubuntu)](https://www.linux.com/tutorials/how-install-and-use-docker-linux/), [Windows 10](https://www.how2shout.com/how-to/how-to-install-docker-on-windows-10.html) or [Mac OSX](https://docs.docker.com/docker-for-mac/install/).
 2. Clone this repository with `git clone git@github.com:BlackChaosNL/Demo-App.git`
 3. Navigate to this folder, and open up a bash terminal, or windows powershell.
-4. Build the image to use later: `docker build . -t _jv_dashboard`
-5. Start the image with the command: `docker run -d _jv_dashboard`
-    1. To change the default port `:80`, to a custom one, you can add `-p 3000:80` after the previous command.
+4. Build the image to use later: `docker build . -t jv_dashboard`
+5. Start the image with the command: `docker run -p 80:80 -d jv_dashboard`
+    1. To change the default port `:80` to a custom one, you can alter the `-p` command to the left side, this exposes your new port to the outside.
 6. The application should now be hosted on `localhost:$PORT`. Where the `$PORT` is either `:80` or the custom port given by you.
 
 ### Netlify
