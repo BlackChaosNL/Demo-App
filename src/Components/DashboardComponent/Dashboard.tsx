@@ -10,7 +10,8 @@ export default class Dashboard extends React.Component<{
 }, {
 	dto: API_DTO,
 	response: RESPONSE_DTO,
-	ReportingRepository: ReportingRepository
+	ReportingRepository: ReportingRepository,
+	showGraph: boolean
 }> {
 	constructor(props: any) {
 		super(props);
@@ -25,7 +26,8 @@ export default class Dashboard extends React.Component<{
 				this.state = {
 					 dto: DTO,
 					 response: new RESPONSE_DTO(),
-					 ReportingRepository: new ReportingRepository(DTO)
+					 ReportingRepository: new ReportingRepository(DTO),
+					 showGraph: false
 				}
 			}
 		} catch (err) {
@@ -41,7 +43,8 @@ export default class Dashboard extends React.Component<{
 	   			this.state = {
 	   				 dto: DTO,
 					 response: new RESPONSE_DTO(),
-	   				 ReportingRepository: new ReportingRepository(DTO)
+					 ReportingRepository: new ReportingRepository(DTO),
+					 showGraph: false
 	   			}
 	   		} else {
 	   			// Route back to / if neither is the case.
@@ -52,6 +55,8 @@ export default class Dashboard extends React.Component<{
 		this.checkSecondDate = this.checkSecondDate.bind(this);
 		this.getItemsFromApi = this.getItemsFromApi.bind(this);
 		this.getResponseDTO = this.getResponseDTO.bind(this);
+		this.getGraphEnabled = this.getGraphEnabled.bind(this);
+		this.setGraph = this.setGraph.bind(this);
 		this.getItemsFromApi();
 	}
 
@@ -90,12 +95,22 @@ export default class Dashboard extends React.Component<{
 		return this.state.response;
 	}
 
+	getGraphEnabled() {
+		return this.state.showGraph;
+	}
+
+	setGraph() {
+		this.setState({ showGraph: !this.state.showGraph });
+	}
+
 	render () {
 		return (<DashboardView
 					checkFirstDate={this.checkFirstDate}
 					checkSecondDate={this.checkSecondDate}
 					getItemsFromApi={this.getItemsFromApi}
 					getResponseDTO={this.getResponseDTO}
+					getGraphEnabled={this.getGraphEnabled}
+					setGraph={this.setGraph}
 				/>)
 	}
 }

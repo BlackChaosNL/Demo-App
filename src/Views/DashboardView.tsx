@@ -1,14 +1,17 @@
 import React from 'react';
 import { Container, Row, Col, FormControl, Button, InputGroup, Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSync } from '@fortawesome/free-solid-svg-icons';
-import Table from "./TableView";
+import { faSync, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import TableView from "./TableView";
+import GraphView from "./GraphView";
 
 export default class DashboardView extends React.Component<{
 	checkFirstDate: any,
 	checkSecondDate: any,
 	getItemsFromApi: any,
-	getResponseDTO: any
+	getResponseDTO: any,
+	getGraphEnabled: any,
+	setGraph: any
 }> {
 	render () {
 		return (
@@ -85,7 +88,19 @@ export default class DashboardView extends React.Component<{
 						</Col>
 					</Row>
 					<Row>
-						<Table
+						<Col>
+							<br />
+							<Button variant="secondary" onClick={this.props.setGraph}><FontAwesomeIcon icon={faChartLine} /></Button>
+							{ this.props.getGraphEnabled() && 
+								<GraphView 
+									data={ this.props.getResponseDTO().by_date }
+								/>
+							}
+						</Col>
+					</Row>
+					<Row>
+						<Col>
+						<TableView
 						  columns={[{
 							  dataField: 'date',
 							  text: 'Date',
@@ -101,6 +116,8 @@ export default class DashboardView extends React.Component<{
 							  text: 'Visitors With Conversation Count'
 							}]}
 						  data={ this.props.getResponseDTO().by_date } />
+						</Col>
+						
 					</Row>
 					<Row>
 						<Col>

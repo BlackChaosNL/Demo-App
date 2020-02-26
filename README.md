@@ -20,7 +20,8 @@
 - [X] Static type checking using Typescript.
 - [X] Documentation on how to run and build/install if needed.
 - [X] The application running and accessible somewhere (for example in AWS)
-- [ ] Virtualisation of existing data.
+- [X] Docker image for running the dashboard in an existing Docker stack.
+- [X] Virtualisation of existing data.
 
 ## Software used
 

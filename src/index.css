@@ -28,11 +28,10 @@ body {
 	border-radius: 7px;
 }
 
-.btn {
+.btn-primary {
 	width: 100%;
 }
 
-.fullSize {
-	width: 96%;
-	margin: 0 auto;
+.GraphView {
+	height: 250px;
 }
