@@ -5,14 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(./Background/bg.jfif) no-repeat center center;
-  /* background-color: #282c34; */
-  height: 100%;
-  margin: 0;
+  background: url(./Background/bg.jfif);
 }
 
 #App {
-	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -23,7 +19,6 @@ body {
 .DashboardComponent {
 	background-color: white;
 	border-style: solid;
-	border-width: solid;
 	border-color: #FD4114;
 	border-radius: 7px;
 }
@@ -33,5 +28,5 @@ body {
 }
 
 .GraphView {
-	height: 250px;
+	height: 300px;
 }
