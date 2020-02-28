@@ -37,6 +37,8 @@
 8 | Yarn | To manage dependencies, yarn is used. |
 9 | Docker | To run the software containerized in a bigger infrastructure, I have introduced a Dockerfile. <br> To deploy this, scroll down to [Docker](#Docker) and follow these steps.  |
 10 | Netlify | To host the SPA, I made use of Netlify so people have easy access to the demo subject. <br> To host a copy of the SPA, I have included directions on how to under [Netlify](#Netlify) |
+11 | Nivo | To virtualize data from the API, I have used Nivo. |
+12 | MomentJS | To get a correct EEST DateTime for login purposes, I have used MomentJS. |
 
 
 **NOTE**: The background used for this software is owned by www.univ-cotedazur.fr.
