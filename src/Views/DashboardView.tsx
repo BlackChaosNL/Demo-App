@@ -1,9 +1,11 @@
 import React from 'react';
-import { Container, Row, Col, FormControl, Button, InputGroup, Card } from 'react-bootstrap';
+import { Container, Row, Col, FormControl, Button, InputGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSync, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import TableView from "./TableView";
 import GraphView from "./GraphView";
+import CardView from "./CardView";
+import UserView from "./UserView";
 
 export default class DashboardView extends React.Component<{
 	checkFirstDate: any,
@@ -12,6 +14,7 @@ export default class DashboardView extends React.Component<{
 	getResponseDTO: any,
 	getGraphEnabled: any,
 	setGraph: any
+	logOut: any
 }> {
 	render () {
 		return (
@@ -20,7 +23,10 @@ export default class DashboardView extends React.Component<{
 					<Row>
 						<Col>
 							<br />
-							<h3>DASHBOARD</h3>
+							<h3 className="center">DASHBOARD</h3>
+							<UserView 
+								logOut={this.props.logOut}
+							/>
 							<hr />
 						</Col>
 					</Row>
@@ -63,28 +69,25 @@ export default class DashboardView extends React.Component<{
 					</Row>
 					<Row>
 						<Col>
-							<Card>
-								<Card.Header as="h6">Total Conversation Count</Card.Header>
-								<Card.Body>
-									<Card.Text>{ this.props.getResponseDTO().total_conversation_count }</Card.Text>
-								</Card.Body>
-							</Card>
+							<CardView 
+								title="Total Conversation Count"
+								content={ this.props.getResponseDTO().total_conversation_count }
+								cssClassName="bg-card-1"
+							/>
 						</Col>
 						<Col>
-							<Card>
-								<Card.Header as="h6">Total User Message Count</Card.Header>
-								<Card.Body>
-									<Card.Text>{ this.props.getResponseDTO().total_user_message_count }</Card.Text>
-								</Card.Body>
-							</Card>
+							<CardView 
+								title="Total User Message Count"
+								content={ this.props.getResponseDTO().total_user_message_count }
+								cssClassName="bg-card-2"
+							/>
 						</Col>
 						<Col>
-							<Card>
-								<Card.Header as="h6">Total Visitor Message Count</Card.Header>
-								<Card.Body>
-									<Card.Text>{ this.props.getResponseDTO().total_visitor_message_count }</Card.Text>
-								</Card.Body>
-							</Card>
+							<CardView 
+								title="Total Visitor Message Count"
+								content={ this.props.getResponseDTO().total_visitor_message_count }
+								cssClassName="bg-card-3"
+							/>
 						</Col>
 					</Row>
 					<Row>
@@ -123,7 +126,7 @@ export default class DashboardView extends React.Component<{
 						<Col>
 							<br />
 							<hr />
-							<h6>Made with ❤ by Jeroen Vijgen </h6>
+							<h6 className="center">Made with ❤ by Jeroen Vijgen </h6>
 						</Col>
 					</Row>
 				</Container>

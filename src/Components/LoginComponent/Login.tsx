@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginView from '../../Views/LoginView';
 import API_DTO from '../../DTOs/api.dto';
+import moment from 'moment';
 
 export default class Login extends React.Component<{
 	history: any
@@ -25,7 +26,7 @@ export default class Login extends React.Component<{
 	}
 
 	verifyLogin() {
-		localStorage.setItem("lastLoggedIn", new Date().toUTCString());
+		localStorage.setItem("lastLoggedIn", moment().format('LLLL'));
 		// eslint-disable-next-line
 		this.props.history.push({
 			pathname: '/dashboard',

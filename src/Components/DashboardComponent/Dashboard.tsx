@@ -57,6 +57,7 @@ export default class Dashboard extends React.Component<{
 		this.getResponseDTO = this.getResponseDTO.bind(this);
 		this.getGraphEnabled = this.getGraphEnabled.bind(this);
 		this.setGraph = this.setGraph.bind(this);
+		this.logOut = this.logOut.bind(this);
 		this.getItemsFromApi();
 	}
 
@@ -69,7 +70,6 @@ export default class Dashboard extends React.Component<{
 	}
 
 	getItemsFromApi() {
-		// TODO: Connect to ReportingRepository.
 		this.state.ReportingRepository.Read(this.state.dto).then((res) => {
 			const response = new RESPONSE_DTO();
             response.room_id = res.room_id;
@@ -86,9 +86,25 @@ export default class Dashboard extends React.Component<{
             response.total_user_message_count = res.total_user_message_count;
             response.total_visitor_message_count = res.total_visitor_message_count;
             response.total_missed_chat_count = res.total_missed_chat_count;
-            response.by_date = res.by_date;
+            response.by_date = this.sortData(res.by_date);
 			this.setState({response: response});
 		});
+	}
+
+	sortData(arr: Array<Object>): Object[] {
+		// Sort data to coherently display in the Graph & Table.
+		// eslint-disable-next-line
+		arr.sort((a: any, b: any) => {
+			let dateA = new Date(a.date);
+			let dateB = new Date(b.date);
+			// Date A is greater than Date B.
+			if (dateA > dateB) return 1;
+			// Date A is lesser than Date B.
+			if (dateA < dateB) return -1;
+			// Date is eql, for stable sorting.
+			return 0;
+		});
+		return arr;
 	}
 
 	getResponseDTO() {
@@ -103,6 +119,10 @@ export default class Dashboard extends React.Component<{
 		this.setState({ showGraph: !this.state.showGraph });
 	}
 
+	logOut() {
+		this.props.history.push('/');
+	}
+
 	render () {
 		return (<DashboardView
 					checkFirstDate={this.checkFirstDate}
@@ -111,6 +131,7 @@ export default class Dashboard extends React.Component<{
 					getResponseDTO={this.getResponseDTO}
 					getGraphEnabled={this.getGraphEnabled}
 					setGraph={this.setGraph}
+					logOut={this.logOut}
 				/>)
 	}
 }

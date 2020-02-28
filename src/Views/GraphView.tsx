@@ -18,20 +18,6 @@ export default class GraphView extends React.Component<{
     }
 
     parseData(): Array<IData>{
-      // Sort data to coherently display in the Graph.
-      // eslint-disable-next-line
-      this.props.data.sort((a: any, b: any) => {
-        let dateA = new Date(a.date);
-        let dateB = new Date(b.date);
-        let same = dateA.getTime() === dateB.getTime();
-        // Date is eql, ignore sorting to stablize sorting.
-        if (same) return 0;
-        // Date A is greater than Date B.
-        if (dateA > dateB) return 1;
-        // Date A is lesser than Date B.
-        if (dateA < dateB) return -1;
-      });
-      
       // Object needing to be returned: 
       // { id: "missed_chat_count", data: [{x: int (DATE), y: int (Count)}] }
       // { id: "conversation_count", data: [{x: int (DATE), y: int (Count)}] }

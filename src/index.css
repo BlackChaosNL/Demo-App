@@ -17,7 +17,7 @@ body {
 
 .LoginComponent,
 .DashboardComponent {
-	background-color: white;
+	background-color: whitesmoke;
 	border-style: solid;
 	border-color: #FD4114;
 	border-radius: 7px;
@@ -29,4 +29,25 @@ body {
 
 .GraphView {
 	height: 300px;
+}
+
+.bg-card-1 {
+	background-color: #ffc1074d;
+}
+
+.bg-card-2 {
+	background-color: #dc35455c;
+}
+
+.bg-card-3 {
+	background-color: #28a74559;
+}
+
+.center {
+	text-align: center;
+}
+
+.center-span {
+	display: table;
+	margin: 0 auto;
 }

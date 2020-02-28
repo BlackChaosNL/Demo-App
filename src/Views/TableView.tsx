@@ -16,6 +16,9 @@ export default class TableView extends React.Component<{
 				  keyField='date'
 				  columns={ this.props.columns }
 				  data={ this.props.data }
+				  striped
+				  hover
+				  condensed
 				  pagination={ paginationFactory({
 								  pageStartIndex: 0,
 								  showTotal: true,

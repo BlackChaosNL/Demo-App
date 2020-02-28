@@ -1,5 +1,7 @@
 import React from 'react';
 import { Card, Button, FormControl } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default class LoginView extends React.Component<{
 	persistApiLink: any,
@@ -31,7 +33,7 @@ export default class LoginView extends React.Component<{
 						onChange={(e: any) => this.props.persistAccessToken(e)}
 					  />
 				    </Card.Text>
-				    <Button variant="primary" onClick={this.props.verifyLogin}>Login </Button>
+				    <Button variant="primary" onClick={this.props.verifyLogin}>Login <FontAwesomeIcon icon={faSignInAlt} /></Button>
 				  </Card.Body>
 				  { localStorage.getItem("lastLoggedIn") !== null &&
 				  	<Card.Footer className="text-muted">Your last login was { localStorage.getItem("lastLoggedIn") }</Card.Footer>

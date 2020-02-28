@@ -10,6 +10,7 @@ export default class ReportingRepository {
             headers: {
                 'Authorization': 'Token ' + t.getApiToken(),
                 'Access-Control-Allow-Origin': '*',
+                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
                 'Accept': 'application/json'
             }
         });
