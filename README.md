@@ -4,7 +4,8 @@
 
 1. [Requirements](#Requirements)
 2. [Software Used](#Software-used)
-3. [Installation](#Installation)
+3. [UML](#UML)
+4. [Installation](#Installation)
     1. [Local](#Local)
     2. [Docker](#Docker)
     3. [Netlify](#Netlify)
@@ -43,6 +44,9 @@
 
 **NOTE**: The background used for this software is owned by www.univ-cotedazur.fr.
 I take no right or ownership to this background, as this piece of software is for personal use only.
+
+## UML
+![UML](./docs/uml.svg)
 
 ## Installation
 
@@ -89,4 +93,3 @@ To deploy this app on a Docker enabled system, you can follow the following step
 7. Set your build options now, and press finish.
 
 You should now be redirected to the dashboard for the Demo-App, your app is now deploying. Here you can find the unique URL where the demo project is hosted, it has the following setup: `https://upbeat-agnesi-aad3fb.netlify.com`.
-
